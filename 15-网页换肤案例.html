@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1.window加载完毕
+        window.onload = function(){
+            // 2.获取元素 需要用到
+            var oBtnRed = document.getElementById("input1");
+            var oBtnGreen = document.getElementById("input2");
+            // body 标签
+            var oBrowser = document.getElementById("bodyOne");
+
+            // 3.监听 改变浏览器的背景颜色
+            // oBtnRed.onclick = function(){
+            //     // 改变背景色的颜色
+            //     // bodyOne.style.backgroundColor = "red";
+            //     oBrowser.style.backgroundColor = "red";
+
+            // }
+
+            // oBtnGreen.onclick = function(){
+            //     // 改变背景色的颜色
+            //     oBrowser.style.backgroundColor = "green";
+                
+            // }
+
+            // 优化
+            function fnChangeColor(color) {
+                oBrowser.style.backgroundColor = color;
+               
+            }
+            oBtnRed.onclick = function (){
+                fnChangeColor("red");
+            }
+            oBtnGreen.onclick = function (){
+                fnChangeColor("green");
+            }
+
+
+
+        }
+    </script>
+</head>
+<body id="bodyOne">
+    <input type="button" id="input1" value="红色皮肤">
+    <input type="button" id="input2" value="绿色皮肤">
+    
+</body>
+</html>

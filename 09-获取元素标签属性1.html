@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+        }
+    
+    </style>
+    
+    <script>
+        // 1.window加载完毕
+        window.onload = function(){
+            // 2.获取元素标签
+            var oInput = document.getElementById("first");
+            // 3.读写 属性
+            // 3.1通过 点语法
+            // class 需要写成 className;
+            // background-color: backgroundColor
+            var sClass = oInput.className;
+            alert(sClass);
+            // 3.2 写入
+            oInput.className = "red";
+
+            // 3.3 background-color: backgroundColor
+            alert(oInput.style.backgroundColor);
+            oInput.style.backgroundColor = "green";
+            
+
+        }
+    </script>
+</head>
+<body>
+    <input style="background-color:aqua" type="text" class="one" value="搜索" id="first">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1.windown加载完毕
+
+        window.onload = function(){
+        // 1.获取div标签
+        var oDiv = document.getElementById("div1");
+
+        // 2.读写 包裹的内容
+        var sContent = oDiv.innerHTML;
+        alert(sContent);
+
+        oDiv.innerHTML = "修改的内容";
+
+        }
+    </script>
+</head>
+<body>
+
+    <div class="box" id="div1">div 包裹的内容</div>
+    
+</body>
+</html>

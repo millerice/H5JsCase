@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // 1.window加载完毕
+        window.onload = function(){
+            // 1.获取元素
+            var oInput = document.getElementById("input1");
+
+            // 2.[]
+            var sStr = "fontSize";
+
+            // 2.2设置 input标签的文字大小 为30px;
+            // oInput.style.fontSize = "30px";
+            // oInput.style.sStr = "30px"; //无效
+
+            // 如果将 变量 改变成 系统认识的属性
+            oInput.style[sStr] = "30px";
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="input1" value="获取元素属性">
+</body>
+</html>
