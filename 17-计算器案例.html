@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // 1. window的加载
+        window.onload = function (){
+
+            // 2. 获取所有的元素
+            var oInput1 = document.getElementById("input1");
+            var oInput2 = document.getElementById("input2");
+            // 下拉列表
+            var oSelect = document.getElementById("select");
+            // 等号按钮
+            var oBtn = document.getElementById("btn");
+            var oResult = document.getElementById("result");
+                     
+            // 3. 监听 等号 按钮的点击
+            oBtn.onclick = function (){
+                // 4. 判断 符号
+                var sJudge = oSelect.value;
+                // 5. 获取 用户输入的内容
+                var sValInput1 = oInput1.value;
+                var sValInput2 = oInput2.value;
+                var result = 0;               
+                if (sJudge == 0) { // +
+                // 默认 文本框获取内容 字符串类型 字符串的拼接
+                // 需转换类型 parseInt 转换成整数型
+                    result = parseInt (sValInput1) + parseInt (sValInput2);
+
+                } 
+                else if (sJudge == 1){ // -
+                    result = sValInput1 - sValInput2;
+                                   
+                }
+                else if (sJudge == 2){ // *
+                    result = sValInput1 * sValInput2;
+                    
+                }
+                else if (sJudge == 3){ // /
+                    result = sValInput1 / sValInput2;
+                    
+                }
+                // 6. 计算结果
+                // 7. 将结果fuzhi
+                oResult.value = result;
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="input1">
+    <select name="" id="select">
+        <option value="0">+</option>
+        <option value="1">-</option>
+        <option value="2">*</option>
+        <option value="3">/</option>
+    </select>
+    <input type="text" id="input2">
+
+    <input type="button" id="btn" value="=">
+    <input type="text" id="result">
+    
+</body>
+</html>
