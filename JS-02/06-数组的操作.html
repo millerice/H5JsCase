@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var aOneArray = [1,2,3,"a","a","b","c"];
+
+            // 1.增 push() 在后面
+            // aOneArray.push("f");
+            // alert(aOneArray);
+
+            // 2.删 pop() 删除最后面的元素
+            // aOneArray.pop();
+            // alert(aOneArray);
+            // 3.改
+            // aOneArray[4] = "kkk"; 
+            // 4.查 获取
+            // alert(aOneArray[4]);
+
+            // 5.splice()
+                     // 开始的位置  删除的个数
+            // aOneArray.splice(1,2);
+                    // 开始位置 删除元素 剩下的都是新增的元素
+            // aOneArray.splice(1,2,"g","h","k");
+            // alert(aOneArray);
+
+            // 6.反转 颠倒 reverse()
+            // aOneArray.reverse();
+            // alert(aOneArray);
+
+            // 7.讲数组 拆分成字符串 
+            // var sStr = aOneArray.join(); //有逗号
+            // var sStr = aOneArray.join(""); //没逗号
+            // var sStr = aOneArray.join("_");//带下划线
+            
+            // var sStr = aOneArray.join("");
+
+            // 8.数组元素的个数 length
+            // var iCount = aOneArray.length;
+
+            // 9. indexOf() 元素第一次出现的脚标
+            var iIndex = aOneArray.indexOf("a");
+            alert(iIndex);
+        } 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
