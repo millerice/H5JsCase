@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #list{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        #list li{
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px dotted lightgray;
+        }
+        
+    </style>
+
+    <script>
+        window.onload = function () {
+            // 1.获取列表
+            var oList = document.getElementById("list");
+
+            // 2.数组的数据
+            var aMovieName =["战狼2","杀破狼","金刚狼","美人鱼","生化危机","速度与激情"];
+
+            // 3.循环遍历 拼接数据
+            var sStr = "";
+            for (var i = 0; i < aMovieName.length; i++) {
+                var name = aMovieName[i];
+                sStr += "<li>" + name + "</li>";
+            }
+            // 4.
+            oList.innerHTML = sStr;
+        }
+    
+    
+    
+    </script>
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
