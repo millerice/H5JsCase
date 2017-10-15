@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload = function (){
+            // 1.字符串的倒置
+            var sStr = "123456789";
+            // 1.字符串 拆分数组
+            var aOneArray = sStr.split("");
+            // 2.数组 倒置
+            var aNewArray = aOneArray.reverse();
+            // 3.数组转换字符串
+            var sNewStr = aNewArray.join("");
+
+            // 链式 连写
+            // sNewStr = sStr.split("").reverse().join("");
+            alert(sNewStr);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

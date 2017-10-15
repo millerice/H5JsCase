@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function (){
+            // 定时器
+            // 1.执行一次
+            // setTimeout(功能,时间(毫秒));
+            function fnAlert(){
+                alert("只执行一次的定时器");
+            }
+            var timer = setTimeout(fnAlert,2000);
+            // 销毁计时器 清除
+            // clearTimeout(timer);
+
+            // 2.反复执行 重复执行
+            // Interval 间隔
+            function fnAlert2(){
+                alert("重复执行的计时器！");
+
+            }
+            var repeatTimer = setInterval(fnAlert2,2000);
+
+            // 销毁
+            clearInterval(repeatTimer);
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
