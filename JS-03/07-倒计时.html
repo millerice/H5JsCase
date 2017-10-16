@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload = function(){
+
+            function fnActivityTime(){
+                // 1.获取当前时间
+            var iCurrentTime = new Date();
+
+            // 2.活动 将来时间 ----大坑 0-11
+            var iFutureTime = new Date(2017,10,11,0,0,0);
+
+            // 3.获取时间差
+            var time = parseInt((iFutureTime - iCurrentTime)/1000);
+            // 4.换算 天时分秒
+            var day = parseInt(time/86400);
+
+            var hour = parseInt((time%86400)/3600);
+
+            var minute = parseInt(((time%86400)%3600)/60);
+
+            var second = parseInt(time%60);
+            
+            var sStr = "距离双十一还有" + day +"天"+ hour +"时"+ minute +"分"+ second +"秒";
+
+            alert(sStr);
+            }
+
+            setInterval(fnActivityTime,1000);
+            
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

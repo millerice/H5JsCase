@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 200px;
+            background: red;
+
+            margin-top: 200px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            // 1.获取div
+            var oDiv = document.getElementById("div1");
+            // 2.改变margin-left left
+            // oDiv.style.marginLeft = "100px";
+
+            // 3.重复定时器
+            // setInterval(function(){
+
+            // oDiv.style.marginLeft = "100px";
+                
+            // },1000)
+
+
+            // var iSpeed = 0;
+            // setInterval(function(){
+            //     iSpeed += 2;
+            //     // 注意：必须要加单位 px
+            //     oDiv.style.marginLeft = iSpeed + "px";
+                
+            // },10)
+
+
+
+            // 方向
+            var iSpeed = 5;
+            // 累加量
+            var iLeft = 0;
+            setInterval(function(){ // 向右
+                iLeft += iSpeed;
+
+                // 1.判断 到500px 位置 往左
+                if (iLeft > 500){
+
+                    iSpeed = -5;
+                }
+                // 2.判断 如果到了 0 的位置 往右
+                if (iLeft < 0){
+
+                    iSpeed = 5;
+                }
+
+                // 注意：必须要加单位 px                
+                oDiv.style.marginLeft = iLeft + "px";
+                
+            },10)
+            // 4.判断范围
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="box" id="div1"></div>
+
+</body>
+</html>

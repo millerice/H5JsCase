@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+
+            // 替换文字 ctrl+c  ctrl+f  ctrl+v
+            // 1.星期 数字 该汉字
+            function fnChangeChinese(number){
+                var sStr = "";
+                switch (number) {
+                    case 0:
+                        sStr = "天";
+                        break;
+                    case 1:
+                        sStr = "一";
+                        break;
+                    case 2:
+                        sStr = "二";
+                        break;
+                    case 3:
+                        sStr = "三";
+                        break;
+                    case 4:
+                        sStr = "四";
+                        break;
+                    case 5:
+                        sStr = "五";
+                        break;
+                    case 6:
+                        sStr = "六";
+                        break;
+                    default:
+                        break;
+                }
+                return sStr;
+            }
+            // 2.0-9 前面加0 
+            function fnAddZero(number){
+                // 判断是否大于9
+                if(number > 9){
+                    return number;
+                }else{
+                    return "0" + number;
+                }
+            }
+
+            //    代码格式化 选中部分 ：contrl + k ,  contrl + f
+            //  shift + alt + f 全部格式化
+            function fnGetTime() {
+                // 1.获取本地时间
+                var time = new Date();
+
+                // 2.年月日 星期 时分秒
+                var year = time.getFullYear();
+
+                // 月 0-11
+                var month = time.getMonth() + 1;
+
+                // 日
+                var day = time.getDate();
+                // 星期
+                var week = time.getDay();
+                // 时
+                var hour = time.getHours();
+                // 分
+                var minute = time.getMinutes();
+                // 秒
+                var second = time.getSeconds();
+
+                var sStr = year + "年" + fnAddZero(month) + "月" + day + "日" +
+                    "星期" + fnChangeChinese(week) + hour + "时" + minute + "分" + second + "秒";
+                
+                console.log(sStr);
+            }
+            fnGetTime();
+            setInterval(fnGetTime,1000);
+            
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // 1.获取元素标签
+            // 放图片的容器
+            var oDiv = document.getElementById("pic");
+
+            var oLeftBtn = document.getElementById("left");
+            var oRightBtn = document.getElementById("right");
+            // 列表
+            var oList = document.getElementById("list");
+            
+            // 2.赋值 2倍的内容
+            // var sOldContent = oList.innerHTML;
+            // var sNewContent = sOldContent + sOldContent;
+            // oList.innerHTML = sNewContent;
+
+            oList.innerHTML = oList.innerHTML + oList.innerHTML;
+            // 3.默认 左边动画 重复定时器
+            // margin-left left
+            // 方向
+            var iSpeed = -5;
+            // 累加量
+            var iLeft = 0;
+            function fnAnimation() {
+                iLeft += iSpeed;
+
+                // 1.判断条件 默认左边 -1000
+                if(iLeft < -1000){
+                    // 切换位置 切换到第一页
+                    iLeft = 0;
+                }
+
+                // 2.判断 右边 0
+                if(iLeft > 0){
+                    // 切换位置 到第二页
+                    iLeft = -1000;
+                }
+
+                // 注意单位 px
+                oList.style.left = iLeft + "px";
+            }
+
+            var timer = setInterval(fnAnimation,30);
+            // 4.判断范围 切换位置
+            // 5.左右按钮的监听 切换方向 正负
+            oLeftBtn.onclick = function () { // 左边
+                iSpeed = -2;
+            }
+            oRightBtn.onclick = function () { //右边
+                iSpeed = 2;
+            }
+
+            // 6.监听鼠标 事件
+            // 方法一：
+            // // 记录停止之前的方向变量
+            // var iLastSpeed = 0;
+            // // 鼠标停留
+            // oDiv.onmouseover = function(){
+            //     // 记录 上一次 停留的变量
+            //     iLastSpeed = iSpeed;
+            //     iSpeed = 0;
+            // }
+            // // 鼠标离开
+            // oDiv.onmouseout = function(){
+            //     // 将上次停留之前的变量 赋值
+            //     iSpeed = iLastSpeed;
+            // }
+
+            // 方法二：干掉计时器
+            oDiv.onmouseover = function (){
+                clearInterval(timer);
+            }
+            oDiv.onmouseout = function(){
+                timer = setInterval(fnAnimation,30);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
