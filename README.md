@@ -1,2 +1,1 @@
-# JS_CASE_CODE
-this is about JS
+本人收藏的一些js实用小案例，非常好用！
